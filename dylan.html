@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form><br>
+    <h1>Zoom Link Launcher for HS-1327</h1>
+Enter your First Period Zoom Link: <input type="text" id="1st"/><br><br>
+Enter your Second Period Zoom Link: <input type="text" id="2nd"/><br><br>
+Enter your Third Period Zoom Link: <input type="text" id="3rd"/><br><br>
+Enter your Fourth Period Zoom Link: <input type="text" id="4th"/><br><br>
+Enter your Fith Period Zoom Link: <input type="text" id="5th"/><br><br>
+Enter your Sixth Period Zoom Link: <input type="text" id="6th"/><br><br>
+Enter your Seventh Period Zoom Link: <input type="text" id="7th"/><br><br>
+Enter your Crew Period Zoom Link: <input type="text" id="Crew"/><br><br>
+<input type='button' value="Submit" onclick="runClasses()"/><br>
+    
+    <h3>So it works by pasting your zoom links into the text boxes, when you press submit it will then launch the classes for the current day automatically if the tab is open</h3>
+</form>
+
+<script>
+    
+function runClasses() 
+{ 
+
+    
+var t1st1= document.getElementById("1st").value;
+var t2nd2= document.getElementById("2nd").value;
+var t3rd3= document.getElementById("3rd").value;
+var t4th4= document.getElementById("4th").value;
+var t5th5= document.getElementById("5th").value;
+var t6th6= document.getElementById("6th").value;
+var t7th7= document.getElementById("7th").value;
+var t8Crew8= document.getElementById("Crew").value;
+    
+    // Hardcode Zoom Links for personal convienience, uncomment the following to make it work
+     //<---- delete this and whats below
+    
+    t1st1 = "https://zoom.us/j/97315068739?pwd=TlJkNGRlbCt6UkJCdW1nTTBSclFCQT09"
+    t2nd2 = "https://zoom.us/j/73411351647?pwd=ODhRQ1JJT0Q5RVRaQnBKelZoZTdJZz09"
+    t3rd3 = "https://www.youtube.com/watch?v=TDcJJYY5sms"
+    t4th4 = "https://zoom.us/j/94187718477?pwd=akxCcWNTZEFJNHFUVTArclZTR0lJZz09"
+    t5th5 = "https://zoom.us/j/93150877969"
+    t6th6 = "https://zoom.us/j/94685001257?pwd=MVVKVldSTExOVWxMTndadlF3bndjZz09"
+    t7th7 = "https://zoom.us/j/96405682583"
+    t8Crew8 = "https://zoom.us/j/96405682583"
+    
+    
+    
+    
+    
+    
+      //<---- and this
+    
+    var el = document.getElementById('ifrm');
+el.src = t1st1; // assign url to src property
+switch (new Date().getDay()) {
+  case 1:
+   monday( t1st1 ,t2nd2,t3rd3,t4th4,t5th5,t6th6,t7th7)
+    break;
+  case 2:
+   otherDay(t1st1,t3rd3,t5th5,t7th7)
+    break;
+  case 3:
+   otherDay(t2nd2,t4th4,t6th6,t8Crew8)
+    break;
+  case 4:
+  otherDay(t1st1,t3rd3,t5th5,t7th7)
+    break;
+  case 5:
+   otherDay(t2nd2,t4th4,t6th6,t8Crew8)
+    break;
+}
+    
+
+   
+}
+   // /*
+function monday(firth,twoth,thirdth,fournd,fithst,sixnd,sevend){
+    
+    window.setInterval(function(){
+    document.open();
+    document.write("<h1>Launcher Launched\n</h1>"); 
+        var date3 = new Date();
+        var hour = date3.getHours()
+        var mins = date3.getMinutes()
+        
+           
+            if(hour === 9 && mins === 40){window.open(firth);document.write("<p> Period Launched</p>");}
+            if(hour === 10 && mins === 20){window.open(twoth);document.write("<p> Period Launched</p>");}
+            if(hour === 11 && mins === 0){window.open(thirdth);document.write("<p> Period Launched</p>");}
+            if(hour === 11 && mins === 40){window.open(fournd);document.write("<p> Period Launched</p>");}
+            if(hour === 12 && mins === 55){window.open(fithst);document.write("<p> Period Launched</p>");}
+            if(hour === 13 && mins === 35){window.open(sixnd);document.write("<p> Period Launched</p>");}
+            if(hour === 14 && mins === 15){window.open(sevend);document.write("<p> Period Launched</p>");}
+    }, 30000)
+        document.close();
+}
+    //*/
+function otherDay(firth,thirdth,fithst,sevend){
+    document.open();
+    document.write("<h1>Launcher Launched\n</h1>"); 
+    window.setInterval(function(){
+        var date2 = new Date();
+        var hour = date2.getHours()
+        var mins = date2.getMinutes()
+            if(hour === 8 && mins === 30){window.open(firth);}
+            if(hour === 9 && mins === 55){window.open(thirdth);document.write("<p> Period Launched</p>");}
+            if(hour === 11 && mins === 55){window.open(fithst);document.write("<p> Period Launched</p>");}
+            if(hour === 13 && mins === 20){window.open(sevend);document.write("<p> Period Launched</p>");}
+        
+    }, 30000)
+    document.close();
+}
+    
+</script>
+
+
+</body>
+</html>
