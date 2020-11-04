@@ -1,0 +1,5 @@
+plugins:
+  - jekyll-feed
+title: The blog
+description: Welcome to my blog
+author: Dylan
