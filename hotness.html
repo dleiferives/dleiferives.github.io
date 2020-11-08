@@ -23,7 +23,7 @@ const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement
   .catch(err => {
     console.log(err);
 });
-   
+   webcam.start();
 var url = "https://api.haystack.ai/api/image/analyze?output=json&apikey=bc4d2c94a49083e0da611a0cc8662201";
 
 var xhr = new XMLHttpRequest();
