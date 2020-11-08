@@ -24,6 +24,7 @@ const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement
     console.log(err);
 });
    webcam.start();
+   let picture = webcam.snap();
 var url = "https://api.haystack.ai/api/image/analyze?output=json&apikey=bc4d2c94a49083e0da611a0cc8662201";
 
 var xhr = new XMLHttpRequest();
@@ -39,7 +40,7 @@ xhr.onreadystatechange = function () {
 
 var data = "@testImage.jpg";
 
-xhr.send(data);
+xhr.send(picture);
 </script>
 
 <p>thanos mah boy</p>
