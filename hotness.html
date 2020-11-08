@@ -1,0 +1,18 @@
+<script>
+var url = "https://api.haystack.ai/api/image/analyze?output=json&apikey=bc4d2c94a49083e0da611a0cc8662201";
+
+var xhr = new XMLHttpRequest();
+xhr.open("POST", url);
+
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = "@testImage.jpg";
+
+xhr.send(data);
+</script>
