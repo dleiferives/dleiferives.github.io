@@ -25,7 +25,7 @@ const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement
 });
    webcam.start();
    let picture = webcam.snap();
-var url = "https://api.haystack.ai/api/image/analyze?output=json&apikey=f1b2d34fb5d4609f9caeceaaf3876751 ";
+var url = "https://api.haystack.ai/api/image/analyze?output=json&apikey=f1b2d34fb5d4609f9caeceaaf3876751";
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", url);
